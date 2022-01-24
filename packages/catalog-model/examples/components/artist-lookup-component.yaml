@@ -3,6 +3,8 @@ kind: Component
 metadata:
   name: artist-lookup
   description: Artist Lookup
+  annotations:
+    circleci.com/project-slug: github/pkman92/grpc-spring-spring
   tags:
     - java
     - data
