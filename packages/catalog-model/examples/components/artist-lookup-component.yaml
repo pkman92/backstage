@@ -5,6 +5,7 @@ metadata:
   description: Artist Lookup
   annotations:
     circleci.com/project-slug: github/pkman92/grpc-spring-spring
+    backstage.io/techdocs-ref: value
   tags:
     - java
     - data
