@@ -6,6 +6,7 @@ metadata:
   annotations:
     circleci.com/project-slug: github/pkman92/grpc-spring-spring
     backstage.io/techdocs-ref: value
+    github.com/project-slug: 'pkman92/backstage'
   tags:
     - java
     - data
