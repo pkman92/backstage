@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: artist-lookup
+  name: artist-lookup-another
   description: Artist Lookup
   annotations:
     circleci.com/project-slug: github/pkman92/grpc-spring-spring
