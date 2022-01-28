@@ -7,6 +7,7 @@ metadata:
     circleci.com/project-slug: github/pkman92/grpc-spring-spring
     backstage.io/techdocs-ref: value
     github.com/project-slug: 'pkman92/backstage'
+    'backstage.io/kubernetes-id': artist-lookup-another
   tags:
     - java
     - data
