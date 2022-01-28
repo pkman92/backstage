@@ -1,5 +1,13 @@
 # @backstage/plugin-tech-insights-backend
 
+## 0.2.2
+
+### Patch Changes
+
+- bbb6622752: Update README to match config options.
+- Updated dependencies
+  - @backstage/backend-common@0.10.5
+
 ## 0.2.1
 
 ### Patch Changes
@@ -21,7 +29,7 @@
   -  entityOwnershipFactRetriever,
   -),
   +createFactRetrieverRegistration({
-  +  cadende: '1 1 1 * *', // Example cron, At 01:01 on day-of-month 1.
+  +  cadence: '1 1 1 * *', // Example cron, At 01:01 on day-of-month 1.
   +  factRetriever: entityOwnershipFactRetriever,
   +}),
 
@@ -70,7 +78,7 @@
   -  entityOwnershipFactRetriever,
   -),
   +createFactRetrieverRegistration({
-  +  cadende: '1 1 1 * *', // Example cron, At 01:01 on day-of-month 1.
+  +  cadence: '1 1 1 * *', // Example cron, At 01:01 on day-of-month 1.
   +  factRetriever: entityOwnershipFactRetriever,
   +}),
 

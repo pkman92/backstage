@@ -93,6 +93,10 @@ const useStyles = makeStyles<BackstageTheme>(theme => ({
   overlayHeaderClose: {
     color: theme.palette.bursts.fontColor,
   },
+
+  marginMobileSidebar: {
+    marginBottom: `${sidebarConfig.mobileSidebarHeight}px`,
+  },
 }));
 
 const sortSidebarGroupsForPriority = (children: React.ReactElement[]) =>
@@ -101,6 +105,8 @@ const sortSidebarGroupsForPriority = (children: React.ReactElement[]) =>
     ({ props: { priority } }) => (Number.isInteger(priority) ? priority : -1),
     'desc',
   );
+
+const sidebarGroupType = React.createElement(SidebarGroup).type;
 
 const OverlayMenu = ({
   children,
@@ -115,7 +121,13 @@ const OverlayMenu = ({
       anchor="bottom"
       open={open}
       onClose={onClose}
-      classes={{ paperAnchorBottom: classes.overlay }}
+      ModalProps={{
+        BackdropProps: { classes: { root: classes.marginMobileSidebar } },
+      }}
+      classes={{
+        root: classes.marginMobileSidebar,
+        paperAnchorBottom: classes.overlay,
+      }}
     >
       <Box className={classes.overlayHeader}>
         <Typography variant="h3">{label}</Typography>
@@ -162,8 +174,13 @@ export const MobileSidebar = (props: MobileSidebarProps) => {
   }, [location.pathname]);
 
   // Filter children for SidebarGroups
+  //
+  // Directly comparing child.type with SidebarSubmenu will not work with in
+  // combination with react-hot-loader
+  //
+  // https://github.com/gaearon/react-hot-loader/issues/304#issuecomment-456569720
   let sidebarGroups = useElementFilter(children, elements =>
-    elements.getElements().filter(child => child.type === SidebarGroup),
+    elements.getElements().filter(child => child.type === sidebarGroupType),
   );
 
   if (!children) {

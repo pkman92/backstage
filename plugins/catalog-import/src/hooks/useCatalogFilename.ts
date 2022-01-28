@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 The Backstage Authors
+ * Copyright 2022 The Backstage Authors
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,8 +14,11 @@
  * limitations under the License.
  */
 
-// Use Object.assign since we haven't configured eslint for ... support in here
-module.exports = Object.assign({}, require('@spotify/prettier-config'), {
-  proseWrap: 'always',
-  printWidth: 80,
-});
+import { useApi, configApiRef } from '@backstage/core-plugin-api';
+import { getCatalogFilename } from '../components/helpers';
+
+export function useCatalogFilename(): string {
+  const config = useApi(configApiRef);
+
+  return getCatalogFilename(config);
+}

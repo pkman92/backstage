@@ -184,21 +184,22 @@ export class GithubAuthProvider implements OAuthHandlers {
   }
 }
 
-export const githubDefaultSignInResolver: SignInResolver<GithubOAuthResult> =
-  async (info, ctx) => {
-    const { fullProfile } = info.result;
+export const githubDefaultSignInResolver: SignInResolver<
+  GithubOAuthResult
+> = async (info, ctx) => {
+  const { fullProfile } = info.result;
 
-    const userId = fullProfile.username || fullProfile.id;
+  const userId = fullProfile.username || fullProfile.id;
 
-    const token = await ctx.tokenIssuer.issueToken({
-      claims: {
-        sub: `user:default/${userId}`,
-        ent: [`user:default/${userId}`],
-      },
-    });
+  const token = await ctx.tokenIssuer.issueToken({
+    claims: {
+      sub: `user:default/${userId}`,
+      ent: [`user:default/${userId}`],
+    },
+  });
 
-    return { id: userId, token };
-  };
+  return { id: userId, token };
+};
 
 export type GithubProviderOptions = {
   /**
@@ -244,6 +245,7 @@ export const createGithubProvider = (
     globalConfig,
     config,
     tokenIssuer,
+    tokenManager,
     catalogApi,
     logger,
   }) =>
@@ -269,7 +271,7 @@ export const createGithubProvider = (
 
       const catalogIdentityClient = new CatalogIdentityClient({
         catalogApi,
-        tokenIssuer,
+        tokenManager,
       });
 
       const authHandler: AuthHandler<GithubOAuthResult> = options?.authHandler
@@ -313,6 +315,7 @@ export const createGithubProvider = (
         persistScopes: true,
         providerId,
         tokenIssuer,
+        callbackUrl,
       });
     });
 };

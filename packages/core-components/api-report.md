@@ -29,6 +29,7 @@ import { LinkProps as LinkProps_3 } from 'react-router-dom';
 import MaterialBreadcrumbs from '@material-ui/core/Breadcrumbs';
 import { MaterialTableProps } from '@material-table/core';
 import { NavLinkProps } from 'react-router-dom';
+import { Options } from 'react-markdown';
 import { Overrides } from '@material-ui/core/styles/overrides';
 import { ProfileInfo } from '@backstage/core-plugin-api';
 import { ProfileInfoApi } from '@backstage/core-plugin-api';
@@ -738,7 +739,7 @@ export type OverflowTooltipClassKey = 'container';
 // Warning: (ae-missing-release-tag) "Page" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
 //
 // @public (undocumented)
-export function Page(props: PropsWithChildren<Props_16>): JSX.Element;
+export function Page(props: Props_16): JSX.Element;
 
 // Warning: (ae-missing-release-tag) "PageClassKey" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
 //
