@@ -8,7 +8,7 @@ metadata:
     backstage.io/techdocs-ref: value
     github.com/project-slug: 'pkman92/backstage'
     'backstage.io/kubernetes-id': artist-lookup-another
-    aws.com/lambda-function-name: serverlessrepo-hello-world
+    aws.com/lambda-function-name: serverlessrepo-hello-world-helloworld-4fKxsXN8Nszz
     aws.com/lambda-region: us-east-1
   tags:
     - java
