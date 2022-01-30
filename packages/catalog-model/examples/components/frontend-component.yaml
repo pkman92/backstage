@@ -1,6 +1,11 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
-type: service
-name: ui-static-asset
+metadata:
+  name: ui-dist
+  description: UI Dist asset
+spec:
+  type: service
+  lifecycle: experimental
+  system: shipping-service
 dependsOn:
   - yarn
