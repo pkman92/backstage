@@ -8,4 +8,4 @@ spec:
   lifecycle: experimental
   system: shipping-service
   dependsOn:
-    - yarn
+    - Component:default/yarn
