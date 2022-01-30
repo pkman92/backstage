@@ -7,5 +7,5 @@ spec:
   type: service
   lifecycle: experimental
   system: shipping-service
-dependsOn:
-  - yarn
+  dependsOn:
+    - yarn
