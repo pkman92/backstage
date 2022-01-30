@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: yarn v1
+  name: yarn
   description: Yarn Package
 spec:
   type: library
@@ -11,7 +11,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: typescript v2
+  name: typescript
   description: Audio and video playback SDK
 spec:
   type: library
